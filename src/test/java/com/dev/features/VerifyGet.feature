@@ -1,8 +1,11 @@
 Feature: fetching User Details
+
+Background:
+	* url 'https://reqres.in/'
  
 Scenario: testing the get call for User Details
  
-Given url 'https://reqres.in/api/users/2'
+Given path 'api/users/2'
 When method GET
 Then status 200
 And match response == { data: '#notnull', support: '#notnull'}
